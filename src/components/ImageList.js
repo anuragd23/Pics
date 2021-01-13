@@ -1,11 +1,12 @@
 import React from 'react'
+import ImageCard from './ImageCard'
 import './ImageList.css'
 
 const ImageList = (props) => {
     
-    const imageTags = props.images.map(({ description, urls, id }) => {
+    const imageTags = props.images.map(image => {
         // Adding key to the root element we are returning 
-        return <img alt={description} src={urls.regular} key={id}></img>
+        return <ImageCard key={image.id} image={image}></ImageCard>
     });
 
     return (
